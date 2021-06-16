@@ -10,4 +10,4 @@
 ## Time used
 |What was done?    | Time spent|
 |------------------|-----------|
-|Exercises 1.1-1.2 |     1h    |
+|Exercises 1.1-1.2 |    ~1h    |

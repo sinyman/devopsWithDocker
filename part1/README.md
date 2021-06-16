@@ -6,3 +6,8 @@
 
 * Assingment 1.2
 ![Assignment 1.2](./assg12.png)
+
+## Time used
+|What was done?    | Time spent|
+|------------------|-----------|
+|Exercises 1.1-1.2 |     1h    |

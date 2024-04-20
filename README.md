@@ -1,2 +1,2 @@
 # devopsWithDocker
-HU DevOps with Docker MOOC course 2023
+HU DevOps with Docker MOOC course 2024

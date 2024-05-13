@@ -13,4 +13,5 @@ and after
 ![ex 1.1 after](./ex_1_2_2.png)
 
 ### Exercise 1.3
+The commands used and the secret message can be seen in the picture.
 ![Ex 1.3](./ex_1_3.png)

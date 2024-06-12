@@ -60,3 +60,34 @@ The files for this exercise can be found in the [ex_1_7-directory](./ex_1_7).
 
 ## Exercise 1.8
 The files for this exercise can be found in the [ex_1_8-directory](./ex_1_8).
+
+## Exercise 1.9
+I started by creating a file to put the logs into:
+`$ touch text.log`
+
+Then I started the container with my logfile as an outside volume:
+`$ docker run -d -v "$(pwd)/text.log:/usr/src/app/text.log" devopsdockeruh/simple-web-service:ubuntu`
+
+Now I can access the logs made by the container in my own filesystem with the command `cat text.log`
+
+## Exercise 1.10
+Ran the following command to start the web server:
+`$ docker run -d -p 127.0.0.1:3000:8080 web-server:latest`
+
+
+## Exercise 1.11
+[Here is the link to the Dockerfile.](./ex_1_11/Dockerfile)
+Afterwards I built it as `spring-simple-button` and ran it with
+```bash
+$ docker run -d -p 127.0.0.1:3000:8080 spring-simple-button:latest
+```
+
+## Exercise 1.12
+[Here is the link to the Dockerfile.](./ex_1_12/Dockerfile)
+
+
+## Exercise 1.15
+Using my right to skip one exercise per part on this one :D
+
+
+

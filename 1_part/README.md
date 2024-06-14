@@ -109,7 +109,7 @@ $ docker run -d -p 8080:8080 hello-backend:v2
 After spinning up both containers I went to check `localhost:5000` in my browser, and when clicking the button for this exercise, I was greeted with this sight:
 ![Exercise 1.14](./pics/ex_1_14.png)
 
-## Exercise 1.16
+## Exercise 1.15
 I didn't have a great project (that wasn't super broken) for this, but I made a simple webapp with Flask that I hope will suffice for this. I assume the point of this exercise is more on learning to push to DockerHub, than creating a magnificent Dockerfile from a megaproject we have laying around.
 
 [Here is the link to DockerHub](https://hub.docker.com/r/sinyman/hello-flask/tags)

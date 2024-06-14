@@ -85,8 +85,43 @@ $ docker run -d -p 127.0.0.1:3000:8080 spring-simple-button:latest
 ## Exercise 1.12
 [Here is the link to the Dockerfile.](./ex_1_12/Dockerfile)
 
+## Exercise 1.13
+[Here is the link to the Dockerfile.](./ex_1_13/Dockerfile)
+I named the image `hello-backend`.
 
-## Exercise 1.15
+Then I started the container with the following command:
+```bash
+$ docker run -d -p 8080:8080 hello-backend:latest
+```
+
+## Exercise 1.14
+* [Here is the Frontend-Dockerfile](./ex_1_14/frontend/Dockerfile)
+* [Here is the Backend-Dockerfile](./ex_1_14/backend/Dockerfile)
+
+Built them as a v2-tag of the older image and started both the backend and the frontend with the following commands:
+```bash
+$ docker run -d -p 5000:5000 hello-frontend:v2
+```
+```bash
+$ docker run -d -p 8080:8080 hello-backend:v2
+```
+
+After spinning up both containers I went to check `localhost:5000` in my browser, and when clicking the button for this exercise, I was greeted with this sight:
+![Exercise 1.14](./pics/ex_1_14.png)
+
+## Exercise 1.16
+I didn't have a great project (that wasn't super broken) for this, but I made a simple webapp with Flask that I hope will suffice for this. I assume the point of this exercise is more on learning to push to DockerHub, than creating a magnificent Dockerfile from a megaproject we have laying around.
+
+[Here is the link to DockerHub](https://hub.docker.com/r/sinyman/hello-flask/tags)
+
+As for instructions on how to run the project, check out [the GitHub repo for the project.](https://github.com/sinyman/hello-flask)
+
+#### TL;DR
+```bash
+$ docker pull sinyman/hello-flask && docker run -d -p 5000:5000 sinyman/hello-flask
+```
+
+## Exercise 1.16
 Using my right to skip one exercise per part on this one :D
 
 

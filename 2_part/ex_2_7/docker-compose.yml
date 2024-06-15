@@ -1,0 +1,33 @@
+
+services:
+    frontend:
+        image: hello-frontend:v2 # The later version with env-vars
+        ports:
+            - "5000:5000"
+        
+    backend:
+        image: hello-backend:v2 # Same as above
+        environment:
+            REDIS_HOST: "redis" # Adding this as this is not in v2-image
+            POSTGRES_USER: "db_user"
+            POSTGRES_PASSWORD: 'password'
+            POSTGRES_DATABASE: 'backend_messages'
+            POSTGRES_HOST: "postgres"
+        ports:
+            - "8080:8080"
+        restart: unless-stopped
+
+    redis:
+        image: redis
+
+    postgres:
+        image: postgres
+        environment:
+            POSTGRES_USER: 'db_user'
+            POSTGRES_PASSWORD: 'password'
+            POSTGRES_DB: 'backend_messages'
+        volumes:
+          - type: 'bind'
+            source: './database'
+            target: '/var/lib/postgresql/data'
+        container_name: postgres-db

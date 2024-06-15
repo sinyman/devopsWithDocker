@@ -1,0 +1,9 @@
+
+services:
+    sws-server:
+        image: devopsdockeruh/simple-web-service:ubuntu
+        ports:
+            - "3000:8080"
+        command: server
+        container_name: sws-server
+        

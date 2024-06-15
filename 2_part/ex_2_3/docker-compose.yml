@@ -1,0 +1,13 @@
+
+services:
+    frontend:
+        image: hello-frontend:v2 # The later version with env-vars
+        ports:
+            - "5000:5000"
+        container_name: hello_frontend
+        
+    backend:
+        image: hello-backend:v2 # Same as above
+        ports:
+            - "8080:8080"
+        container_name: hello_backend

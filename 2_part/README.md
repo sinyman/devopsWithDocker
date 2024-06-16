@@ -28,3 +28,10 @@ Even though compute seemed exhaustingly slow at first, with scaling 10, it just 
 [The docker-compose.yml file can be found here](./ex_2_7/docker-compose.yml)
 
 ## Exercise 2.8
+[The docker-compose.yml file can be found here](./ex_2_8/docker-compose.yml)
+
+## Exercise 2.9
+[All the necessary files can be found here](./ex_2_9)
+
+I did some changes to the Dockerfiles and built them as v3, which is what was used in compose.
+All of my struggles with this exercise was due to a rouge / missing in nginx.conf :/

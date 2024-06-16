@@ -35,3 +35,13 @@ Even though compute seemed exhaustingly slow at first, with scaling 10, it just 
 
 I did some changes to the Dockerfiles and built them as v3, which is what was used in compose.
 All of my struggles with this exercise was due to a rouge / missing in nginx.conf :/
+
+## Exercise 2.10
+[The docker-compose.yml file can be found here](./ex_2_10/docker-compose.yml)
+
+This is what the portscan returned after removing the ports from docker-compose.yml
+![portscan](./pics/ex_2_10.png)
+
+## Exercise 2.11
+
+Using my right to skip one exercise per part on this one.

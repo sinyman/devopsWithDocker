@@ -1,0 +1,49 @@
+
+services:
+
+    frontend:
+        image: hello-frontend:v3
+        container_name: 'frontend'
+        
+    backend:
+        image: hello-backend:v3
+        environment:
+            REDIS_HOST: "redis"
+            POSTGRES_USER: "db_user"
+            POSTGRES_PASSWORD: 'password'
+            POSTGRES_DATABASE: 'backend_messages'
+            POSTGRES_HOST: "postgres"
+        restart: unless-stopped
+        container_name: 'backend'
+        depends_on:
+            - postgres
+
+    redis:
+        image: redis
+        container_name: 'redis'
+
+    postgres:
+        image: postgres
+        environment:
+            POSTGRES_USER: 'db_user'
+            POSTGRES_PASSWORD: 'password'
+            POSTGRES_DB: 'backend_messages'
+        volumes:
+          - type: 'bind'
+            source: './database'
+            target: '/var/lib/postgresql/data'
+        container_name: postgres
+        restart: unless-stopped
+
+    nginx:
+        image: nginx:1.25.3-alpine
+        ports:
+            - 80:80
+        volumes:
+          - type: 'bind'
+            source: './nginx.conf'
+            target: '/etc/nginx/nginx.conf'
+        container_name: nginx-reverse-proxy
+        restart: unless-stopped
+        depends_on:
+            - backend

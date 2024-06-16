@@ -1,0 +1,53 @@
+
+services:
+
+    frontend:
+        image: hello-frontend:v2 # The later version with env-vars
+        #ports:
+            #- "5000:5000"
+        container_name: 'frontend'
+        
+    backend:
+        image: hello-backend:v2 # Same as above
+        environment:
+            REDIS_HOST: "redis"
+            POSTGRES_USER: "db_user"
+            POSTGRES_PASSWORD: 'password'
+            POSTGRES_DATABASE: 'backend_messages'
+            POSTGRES_HOST: "postgres"
+            REQUEST_ORIGIN: http://localhost:5000
+        #ports:
+            #- "8080:8080"
+        restart: unless-stopped
+        container_name: 'backend'
+        depends_on:
+            - postgres
+
+    redis:
+        image: redis
+        container_name: 'redis'
+
+    postgres:
+        image: postgres
+        environment:
+            POSTGRES_USER: 'db_user'
+            POSTGRES_PASSWORD: 'password'
+            POSTGRES_DB: 'backend_messages'
+        volumes:
+          - type: 'bind'
+            source: './database'
+            target: '/var/lib/postgresql/data'
+        container_name: postgres
+        restart: unless-stopped
+
+    nginx:
+        image: nginx
+        ports:
+            - 80:80
+        volumes:
+          - type: 'bind'
+            source: './nginx.conf'
+            target: '/etc/nginx/nginx.conf'
+            #- "./nginx.conf:/etc/nginx/nginx.conf"
+        container_name: nginx-reverse-proxy
+        restart: unless-stopped

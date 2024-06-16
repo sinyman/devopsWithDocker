@@ -33,7 +33,8 @@ Even though compute seemed exhaustingly slow at first, with scaling 10, it just 
 ## Exercise 2.9
 [All the necessary files can be found here](./ex_2_9)
 
-I did some changes to the Dockerfiles and built them as v3, which is what was used in compose.
+I did some changes to the Dockerfiles and built them as v3, which is what was used in docker-compose.yml.
+The new Dockerfiles can be found in the `frontend` and `backend` directories.
 All of my struggles with this exercise was due to a rouge / missing in nginx.conf :/
 
 ## Exercise 2.10
